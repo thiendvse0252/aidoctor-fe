@@ -1,4 +1,5 @@
-import 'package:ai_doctor/screens/LoginScreen.dart';
+import 'package:ai_doctor/modules/authenticate//LoginScreen.dart';
+import 'package:ai_doctor/modules/overview/FirstScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,10 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        //colorScheme: ColorScheme.fromSeed(seedColor: const Color(0x)),
+        scaffoldBackgroundColor: const Color(0xFF07203C),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: const FirstScreen(),
     );
   }
 }

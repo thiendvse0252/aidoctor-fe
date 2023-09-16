@@ -1,5 +1,9 @@
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import 'RegisterScreen.dart';
+import '../../widgets/stateful/overview.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -21,17 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
           child: Column(
             children: [
-              Container(
-                height: deviceHeight * 0.30,
-                child: const FittedBox(
-                  child: CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/images/logo.png',
-                  ),
-                  radius: 120,
-                ),
-                ),
-              ),
+              const Overview()
+              ,
               Container(
                 height: deviceHeight * 0.6,
                 width: double.infinity,
@@ -40,15 +35,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Login Now',
-                        style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                      ),
                       SizedBox(
                         height: constraints.maxHeight * 0.01,),
                       Container(
                         height: constraints.maxHeight * 0.12,
                         decoration: BoxDecoration(
-                          color: Color(0xffffffff).withOpacity(0.4),
+                          color: const Color(0xffffffff).withOpacity(0.4),
                           borderRadius: BorderRadius.circular(16),
                         ),
 
@@ -58,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: TextField(
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'test@gmail.com',
+                                hintText: 'Phone Number',
                               ),
                             ),
                           ),
@@ -70,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         height: constraints.maxHeight * 0.12,
                         decoration: BoxDecoration(
-                          color: Color(0xffffffff).withOpacity(0.4),
+                          color: const Color(0xffffffff).withOpacity(0.4),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Padding(
@@ -105,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextButton(onPressed: (){}, child: Text(
                             'Forgot password?',
                             style: TextStyle(
-                              color: Color(0xffF80849),
+                              color: Color(0xFF00DCA6),
                             ),
                           ))
                         ],
@@ -120,14 +112,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: ElevatedButton(
                           onPressed: (){},
                           child: const Text(
-                            'Login',
+                            'LOGIN',
                             style: TextStyle(
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 22,
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            primary: const Color(0x0000dca6),
+                              primary: Color(0xFF00DCA6),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(28),
                             )),
@@ -139,18 +132,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       RichText(text: TextSpan(
                         text: 'New here? ',
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 18,
                         ),
                         children: [
                           TextSpan(
                             text: 'Register',
                             style: const TextStyle(
-                              color: Color(0xffF80849),
+                              color: Color(0xFF00DCA6),
                               fontSize: 18,
                             ),
                             recognizer: TapGestureRecognizer()
-                              ..onTap = () {}
+                              ..onTap = () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                                );
+                              }
                           )
                         ]
                       ))
