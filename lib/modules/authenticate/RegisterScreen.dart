@@ -3,6 +3,7 @@ import 'package:ai_doctor/modules/authenticate//LoginScreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../home/screens/HomeScreen.dart';
 import '/widgets/stateful/overview.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -30,7 +31,7 @@ class _State extends State<RegisterScreen> {
               Container(
                 height: deviceHeight * 0.6,
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: LayoutBuilder(builder: (ctx, constraints){
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -188,7 +189,12 @@ class _State extends State<RegisterScreen> {
 
                         ),
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HomeScreen()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                               primary: AppColor.brightgreen,
                               shape: RoundedRectangleBorder(

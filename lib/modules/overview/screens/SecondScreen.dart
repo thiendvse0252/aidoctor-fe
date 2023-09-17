@@ -1,4 +1,5 @@
 
+import 'package:ai_doctor/modules/authenticate/LoginScreen.dart';
 import 'package:ai_doctor/modules/overview/widgets/overviewWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +66,9 @@ class SecondScreen extends StatelessWidget {
 
               ),
 
-              const overviewWidget(),
+              overviewWidget(
+                pageRoute: const LoginScreen(),
+              ),
             ],
 
           ),

@@ -1,4 +1,5 @@
 
+import 'package:ai_doctor/modules/overview/screens/SecondScreen.dart';
 import 'package:ai_doctor/modules/overview/widgets/overviewWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,9 @@ class FirstScreen extends StatelessWidget {
               const SizedBox(
                   height: 34),
 
-              const overviewWidget(),
+              overviewWidget(
+                pageRoute: const SecondScreen(),
+              ),
             ],
           ),
         ),

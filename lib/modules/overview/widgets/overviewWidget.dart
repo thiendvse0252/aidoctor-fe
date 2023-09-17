@@ -4,7 +4,9 @@ import '../../authenticate/LoginScreen.dart';
 import '../screens/SecondScreen.dart';
 
 class overviewWidget extends StatelessWidget {
-  const overviewWidget({Key? key}) : super(key: key);
+  Widget pageRoute;
+  overviewWidget({super.key, required this.pageRoute});
+  //const overviewWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class overviewWidget extends StatelessWidget {
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondScreen()),
+                  MaterialPageRoute(builder: (context) => pageRoute),
                 );
               },
               alignment: Alignment.centerRight,
