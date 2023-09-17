@@ -1,9 +1,10 @@
 
+import 'package:ai_doctor/modules/home/screens/HomeScreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'RegisterScreen.dart';
-import '../../widgets/stateful/overview.dart';
+import '/widgets/stateful/overview.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -94,7 +95,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButton(onPressed: (){}, child: Text(
+                          TextButton(onPressed: (){
+
+                          }, child: const Text(
                             'Forgot password?',
                             style: TextStyle(
                               color: Color(0xFF00DCA6),
@@ -110,7 +113,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         ),
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HomeScreen()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                              primary: const Color(0xFF00DCA6),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(28),
+                            )),
                           child: const Text(
                             'LOGIN',
                             style: TextStyle(
@@ -119,11 +132,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontSize: 22,
                             ),
                           ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF00DCA6),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(28),
-                            )),
                         ),
                       ),
                       SizedBox(

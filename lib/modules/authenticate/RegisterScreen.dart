@@ -3,7 +3,7 @@ import 'package:ai_doctor/modules/authenticate//LoginScreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/stateful/overview.dart';
+import '/widgets/stateful/overview.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _State extends State<RegisterScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Overview()
+              const Overview()
               ,
               Container(
                 height: deviceHeight * 0.6,
